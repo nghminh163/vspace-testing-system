@@ -8,6 +8,7 @@ export default function useAudio(url) {
 
   useEffect(() => {
     playing ? audio.play() : audio.pause();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playing]);
 
   useEffect(() => {
@@ -15,7 +16,8 @@ export default function useAudio(url) {
     return () => {
       audio.removeEventListener("ended", () => setPlaying(false));
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return [playing, toggle];
-};
+}
