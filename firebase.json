@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "vspace-dev",
+    "site": "vspace-vn",
     "public": "build",
     "ignore": [
       "firebase.json",
