@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import { AuthCheck, SuspenseWithPerf } from "reactfire";
 
-function App() {
+import LoadingScreen from "./components/loading";
+
+const LoginScreen = React.lazy(() => import("./screens/login"));
+const HomeScreen = React.lazy(() => import("./screens/review"));
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<LoadingScreen />}>
+      <AuthCheck
+        requiredClaims={{ candidate: true }}
+        fallback={<LoginScreen />}
+      >
+        <HomeScreen />
+      </AuthCheck>
+    </Suspense>
   );
 }
-
-export default App;
