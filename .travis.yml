@@ -6,3 +6,7 @@ install:
   - yarn
 script:
   - yarn build
+deploy:
+  provider: firebase
+  skip_cleanup: true
+  token: "1//0ebrC8uPEtYHLCgYIARAAGA4SNwF-L9IrGMYuMqjp0pc6UYheGx1LvdcsiWKnNZgZZaC82Fs99JeYihiRd_hAZt8XRrcRhctjbNE"

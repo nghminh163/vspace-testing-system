@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { AuthCheck, SuspenseWithPerf } from "reactfire";
+import { AuthCheck } from "reactfire";
 
 import LoadingScreen from "./components/loading";
 
