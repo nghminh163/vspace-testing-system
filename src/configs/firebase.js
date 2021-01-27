@@ -6,6 +6,6 @@ export default function firebaseConfig() {
     storageBucket: "vspace-vn.appspot.com",
     messagingSenderId: "356456684546",
     appId: "1:356456684546:web:9eff2df8ddb17e302d5b1b",
-    measurementId: "G-SZDZYGK7JY",
+    measurementId: "G-SZDZYGK7JY"
   };
 }
