@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "app-prod",
+    "target": "vspace-vn",
     "public": "build",
     "ignore": [
       "firebase.json",
