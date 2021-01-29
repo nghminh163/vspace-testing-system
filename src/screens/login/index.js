@@ -12,6 +12,7 @@ const Copyright = React.lazy(() => import("../../components/copyright"));
 const LoginForm = React.lazy(() => import("./loginForm"));
 const NotFoundTest = React.lazy(() => import("./notfoundTest"));
 
+//TODO: Not load image if mobile
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
@@ -86,8 +87,10 @@ export default function LoginScreen() {
             <ClaimsCheck
               user={auth.data}
               fallback={<NotFoundTest />}
-              requiredClaims={auth.data}
-            />
+              requiredClaims={{ candidate: true }}
+            >
+              <p>Access grant</p>
+            </ClaimsCheck>
           ) : (
             <LoginForm />
           )}
