@@ -10,7 +10,6 @@ const LoginScreen = React.lazy(() => import("./screens/login"));
 const ReviewScreen = React.lazy(() => import("./screens/review"));
 const PreTestScreen = React.lazy(() => import("./screens/pretest"));
 const TestScreen = React.lazy(() => import("./screens/test"));
-
 export default function App() {
   return (
     <Suspense fallback={<LoadingScreen />}>

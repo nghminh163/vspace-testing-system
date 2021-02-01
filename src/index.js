@@ -10,7 +10,7 @@ import { Provider } from "unstated";
 ReactDOM.render(
   <>
     <Provider>
-      <FirebaseAppProvider firebaseConfig={firebaseConfig()} suspense={true}>
+      <FirebaseAppProvider firebaseConfig={firebaseConfig} suspense={true}>
         <App />
       </FirebaseAppProvider>
     </Provider>

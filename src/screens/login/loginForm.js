@@ -3,7 +3,10 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import { useAuth } from "reactfire";
+
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+
+const MockLogin = React.lazy(() => import("../../debug/mockLogin"));
 
 const useStyles = makeStyles((theme) => ({
   introduction: {
@@ -13,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
 export default function LoginForm() {
   const classes = useStyles();
   const auth = useAuth;
-
   const uiConfig = {
     signInFlow: "popup",
     signInOptions: [auth.GoogleAuthProvider.PROVIDER_ID],
@@ -22,7 +24,6 @@ export default function LoginForm() {
       signInSuccessWithAuthResult: () => false,
     },
   };
-
   return (
     <>
       <Typography variant="subtitle2" className={classes.introduction}>
@@ -30,6 +31,7 @@ export default function LoginForm() {
       </Typography>
       <Box p={1} />
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth()} />
+      {process.env.NODE_ENV === "development" && <MockLogin />}
     </>
   );
 }
