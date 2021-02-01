@@ -12,7 +12,7 @@ export default function Testing() {
   useEffect(() => {
     storage
       .refFromURL(
-        "gs://vspacevn-testing-system.appspot.com/sample-test-listening.ogg"
+        "gs://vsvn-testing-system.appspot.com/sample-test-listening.ogg"
       )
       .getDownloadURL()
       .then((url) => setAudioTest(url));
